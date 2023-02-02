@@ -1,0 +1,173 @@
+export const menuInfos = [
+    {
+        id: -1,
+        icon: 'ep:menu',
+        title: '仪表盘',
+        componentName: 'DashBoard',
+        parentId: 0,
+        openType: 0,
+        showIndex: 1,
+        url: '/dashboard',
+        redirect: '/dashboard/analysis',
+        hidden: false
+    },
+    {
+        id: -2,
+        title: '分析页',
+        url: '/dashboard/analysis',
+        component: 'dashboard/analysis/analysis',
+        componentName: 'Analysis',
+        openType: 0,
+        parentId: -1,
+        showIndex: 1,
+        hidden: false
+    },
+    {
+        id: -3,
+        title: '工作台',
+        url: '/dashboard/workbench',
+        component: 'dashboard/workbench/workbench',
+        componentName: 'Workbench',
+        openType: 0,
+        parentId: -1,
+        showIndex: 2,
+        hidden: false
+    },
+    {
+        id: 1,
+        icon: 'ep:memo',
+        title: '平台管理',
+        componentName: '',
+        parentId: 0,
+        openType: 0,
+        showIndex: 1,
+        url: '/workbench',
+        redirect: '/systemDesign/remind',
+        hidden: false
+    },
+    {
+        id: 2,
+        title: '提醒设置',
+        url: '/systemDesign/remind',
+        component: 'systemDesign/remind/remind',
+        componentName: 'Remind',
+        openType: 0,
+        parentId: 1,
+        showIndex: 1,
+        hidden: false
+    },
+    {
+        id: 3,
+        title: '系统模块',
+        url: '/systemDesign/systemModule',
+        component: 'systemDesign/systemModule/systemModule',
+        componentName: 'SystemModule',
+        openType: 0,
+        parentId: 1,
+        showIndex: 2,
+        hidden: false
+    },
+    {
+        id: 4,
+        title: '系统模块按钮',
+        url: '/systemDesign/systemButton',
+        component: 'systemDesign/systemButton/systemButton',
+        componentName: 'SystemButton',
+        openType: 0,
+        parentId: 1,
+        showIndex: 2,
+        hidden: false
+    },
+    {
+        id: 5,
+        title: '异常信息',
+        url: '/systemDesign/exception',
+        component: 'systemDesign/exception/exception',
+        componentName: 'Exception',
+        openType: 0,
+        parentId: 1,
+        showIndex: 2,
+        hidden: false
+    },
+    {
+        id: 6,
+        title: '系统设置',
+        url: '/systemDesign/systemSet',
+        component: 'systemDesign/systemSet/systemSet',
+        componentName: 'SystemSet',
+        openType: 0,
+        parentId: 1,
+        showIndex: 1,
+        hidden: false
+    },
+    {
+        id: 7,
+        icon: 'ep:setting',
+        title: '系统管理',
+        componentName: '',
+        parentId: 0,
+        openType: 0,
+        showIndex: 2,
+        url: '/systemManage',
+        redirect: '/systemManage/user',
+        hidden: false
+    },
+    {
+        id: 8,
+        title: '用户管理',
+        url: '/systemManage/user',
+        component: 'systemManage/user/user',
+        componentName: 'User',
+        openType: 0,
+        parentId: 7,
+        showIndex: 1,
+        hidden: false
+    },
+    {
+        id: 9,
+        title: '系统参数设置',
+        url: '/systemManage/sysParams',
+        component: 'systemManage/sysParams/sysParams',
+        componentName: 'SysParams',
+        openType: 0,
+        parentId: 7,
+        showIndex: 2,
+        hidden: false
+    },
+    {
+        id: 10,
+        title: '角色管理',
+        url: '/systemManage/role',
+        component: 'systemManage/role/role',
+        componentName: 'Role',
+        openType: 0,
+        parentId: 7,
+        showIndex: 3,
+        hidden: false
+    },
+    {
+        id: 11,
+        title: '个人设置',
+        url: '/systemManage/accountSet',
+        component: 'systemManage/accountSet/accountSet',
+        componentName: 'AccountSet',
+        openType: 0,
+        parentId: 7,
+        showIndex: 1,
+        hidden: false
+    },
+    {
+        id: 12,
+        icon: 'ep:location',
+        title: '测试',
+        componentName: 'Test',
+        parentId: 0,
+        openType: 0,
+        showIndex: 2,
+        component: 'test/test',
+        url: '/test',
+        redirect: '',
+        hidden: false,
+        children: []
+    }
+]

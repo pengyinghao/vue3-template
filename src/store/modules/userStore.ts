@@ -1,0 +1,68 @@
+import { defineStore } from 'pinia'
+import { RouteRecordRaw } from 'vue-router'
+import { cloneDeep } from 'lodash'
+import { menuInfos } from '../../menus'
+import createRoute from '@/router/guard/generatorDynamicRouter'
+
+interface UserInfo {
+    userName: string
+}
+interface userStore {
+    info: UserInfo
+    /** 默认系统菜单 */
+    originMenus: SystemMenu[]
+    /** element 菜单 */
+    elementMenus: RouteRecordRaw[]
+    /** 处理果的路由信息 */
+    routes: RouteRecordRaw[]
+    /** 动态路由 */
+    dynmicRoute: (() => void)[]
+}
+
+export default defineStore({
+    id: 'user',
+    state: (): userStore => ({
+        info: {
+            userName: ''
+        },
+        routes: [],
+        originMenus: [],
+        elementMenus: [],
+        dynmicRoute: []
+    }),
+    actions: {
+        /** 退出登录 */
+        loginOut() {
+            this.dynmicRoute.forEach((fn) => fn())
+            this.$reset()
+        },
+        /** 创建路由 */
+        generateRoutes() {
+            this.originMenus = cloneDeep(menuInfos)
+            const routes = createRoute(menuInfos)
+            this.routes = routes
+            this.markElementRoute(routes)
+            return Promise.resolve(routes)
+        },
+        /** 处理element菜单  */
+        markElementRoute(routes: RouteRecordRaw[]) {
+            const newRouter = cloneDeep(routes) // 将单级路由解析出来，用到element 菜单中
+            this.elementMenus = newRouter.map((item) => {
+                if (item.meta?.singleLevel && item.children && item.children.length > 0) {
+                    return item.children[0]
+                }
+                return item
+            })
+        }
+    },
+    persist: {
+        enabled: true,
+        strategies: [
+            {
+                key: 'user',
+                storage: sessionStorage,
+                paths: ['info']
+            }
+        ]
+    }
+})

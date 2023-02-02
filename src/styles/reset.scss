@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+    @apply m-0px h-full text-12px;
+}
+
+html {
+    background-color: #f6f9f8;
+}
+
+html.dark {
+    background-color: #1a1a1c;
+
+    --el-bg-color: #21252a;
+}
+
+:root {
+    --el-font-size-base: 12px;
+    --el-font-size-medium: 14px;
+    --el-font-size-large: 16px;
+    --dark1: #343a41;
+}
+
+.el-dialog {
+    --el-dialog-content-font-size: var(--el-font-size-base);
+}
+
+.el-breadcrumb {
+    font-size: var(--el-font-size-base);
+}
