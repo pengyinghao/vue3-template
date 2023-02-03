@@ -1,63 +1,77 @@
 <template>
-    <div>
-        <Icon name="ep:aim" />
-        <el-button type="primary" @click="appStore.showPreferenceSetting = true">
-            偏好设置
-        </el-button>
-        <el-button type="primary" @click="appStore.themeMode = 'dark'"> 暗黑模式 </el-button>
-        <el-button type="primary" @click="appStore.themeMode = 'light'">默认</el-button>
-        <el-button type="primary" @click="onChangeTheme('#009688')">淡绿</el-button>
-        <el-button type="primary" @click="onChangeTheme('#409eff')">默认主题</el-button>
-        <br />
-        <br />
-        <CSelect
-            v-model="value"
-            :data-source="options"
-            display-label="name"
-            multiple
-            class="m-2 w-300px"
-            placeholder="Select"
-        >
-        </CSelect>
-        <br />
-        <br />
-    </div>
+    <PageContainer header>
+        <template #title>测试</template>
+        <Search :options="conditions" default="date" @search="onSearch" />
+        <el-table :data="tableData" style="width: 100%" class="mt-10px">
+            <el-table-column prop="date" label="Date" width="180" />
+            <el-table-column prop="name" label="Name" width="180" />
+            <el-table-column prop="address" label="Address" />
+        </el-table>
+    </PageContainer>
 </template>
+<script lang="ts" setup>
+import PageContainer from '@/components/common/PageContainer.vue'
+import { SearchOptions } from '@/components/ElementExtend/Search/Control/CotrolType'
+import Search from '@/components/ElementExtend/Search/Search.vue'
+defineOptions({ name: 'Exception' })
 
-<script setup lang="ts">
-import { useChangeTheme } from '@/hooks/theme/useChangeTheme'
-import { useTheme } from '@/hooks/theme/useTheme'
-import { CSelect, Icon } from '@/components'
-defineOptions({ name: 'Root' })
-useTheme()
-const appStore = useAppStore()
-
-const { changeTheme } = useChangeTheme()
-const onChangeTheme = (color: string) => {
-    changeTheme(color)
+const tableData = [
+    {
+        date: '2016-05-03',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+    },
+    {
+        date: '2016-05-02',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+    },
+    {
+        date: '2016-05-04',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+    },
+    {
+        date: '2016-05-01',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+    }
+]
+const onSearch = (conditions: Record<string, any>) => {
+    // eslint-disable-next-line no-console
+    console.log(conditions)
+    window.$message({
+        type: 'success',
+        message: JSON.stringify(conditions)
+    })
 }
 
-const value = ref([])
-const options = [
+const conditions: SearchOptions[] = [
     {
-        value: 'Option1',
-        name: 'Option1'
+        type: 'input',
+        label: '资源名称',
+        field: 'name'
     },
     {
-        value: 'Option2',
-        name: 'Option2'
+        type: 'input',
+        label: '资源类型',
+        field: 'type',
+        value: '资源类型value'
     },
     {
-        value: 'Option3',
-        name: 'Option3'
-    },
-    {
-        value: 'Option4',
-        name: 'Option4'
-    },
-    {
-        value: 'Option5',
-        name: 'Option5'
+        type: 'date-range',
+        mode: 'daterange',
+        label: '日期',
+        field: 'date',
+        startField: 'startDate',
+        endField: 'endDate',
+        value: ['2021-01-01', '2021-02-02']
     }
 ]
 </script>
+
+<style scoped>
+:deep(.el-table__header th) {
+    background-color: #e9ebf3;
+}
+</style>

@@ -1,7 +1,12 @@
 <template>
     <el-select v-bind="{ ...$attrs, ...props }" @change="onChange">
         <template v-if="!$slots.default && !$slots.custom">
-            <el-option v-for="(item, index) in options" :key="index" :value="item[displayValue]">
+            <el-option
+                v-for="(item, index) in options"
+                :key="index"
+                :label="item[displayLabel]"
+                :value="item[displayValue]"
+            >
                 {{ item[displayLabel] }}
             </el-option>
         </template>

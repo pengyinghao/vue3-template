@@ -92,7 +92,7 @@ const contentStyle = computed<CSSProperties>(() => {
     }
 
     &-inner {
-        padding: 12px;
+        @apply h-full p-12px;
     }
 }
 

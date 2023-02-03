@@ -11,6 +11,6 @@
         "esbenp.prettier-vscode",
         "formulahendry.auto-complete-tag",
         "formulahendry.auto-close-tag",
-        "formulahendry.auto-rename-tag"
+        "formulahendry.auto-rename-tag",
     ]
 }

@@ -24,6 +24,7 @@ module.exports = {
     },
     plugins: ['vue', '@typescript-eslint', 'import'],
     rules: {
+        'prefer-destructuring': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         'no-unused-expressions': 'off',
         'no-param-reassign': 'off',
