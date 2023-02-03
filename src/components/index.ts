@@ -1,3 +1,5 @@
 import CSelect from './ElementExtend/Select/Select.vue'
 import Icon from './Icon/Icon.vue'
-export { CSelect, Icon }
+import PageContainer from './common/PageContainer.vue'
+
+export { CSelect, Icon, PageContainer }
