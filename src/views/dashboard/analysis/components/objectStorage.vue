@@ -3,7 +3,7 @@
         <template #header>
             <span class="font-bold">对象存储</span>
         </template>
-        <div class="h-100px flex-y-center justify-around">
+        <el-row class="min-h-100px flex-y-center">
             <ObjectStorageItem
                 icon-name="prime:cloud-upload"
                 desc="存储总量"
@@ -23,7 +23,7 @@
                 counter="1100"
                 unit-value="(个)"
             />
-        </div>
+        </el-row>
     </el-card>
 </template>
 <script lang="ts" setup>

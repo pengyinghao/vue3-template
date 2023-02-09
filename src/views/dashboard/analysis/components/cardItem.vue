@@ -7,14 +7,18 @@
                 </div>
                 <div>
                     <div class="text-16px c-#8c8c8c text-center">{{ label }}</div>
-                    <div class="text-20px mt-12px c-#7b7b7b text-center">{{ value }}</div>
+                    <div class="text-20px mt-12px c-#7b7b7b text-center">
+                        <count-up class="item-counter" :end-val="value" />
+                    </div>
                 </div>
             </div>
         </el-card>
     </el-col>
 </template>
 <script lang="ts" setup>
+import CountUp from 'vue-countup-v3'
 import { Icon } from '@/components'
+
 interface Props {
     /** 图标 */
     iconName: string

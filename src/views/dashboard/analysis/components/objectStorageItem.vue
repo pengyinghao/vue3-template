@@ -1,13 +1,15 @@
 <template>
-    <div class="item">
-        <div class="flex items-end">
-            <icon size="30" :name="iconName" class="c-primary" />
-            <div class="item-wrap">
-                <count-up class="item-counter" :end-val="counter" :options="options" />
-                <div class="item-text">{{ desc + unitValue }}</div>
+    <el-col :span="8" :md="8" :sm="12" :xs="24" class="mb-12px">
+        <div class="item">
+            <div class="flex items-end">
+                <icon size="30" :name="iconName" class="c-primary" />
+                <div class="item-wrap">
+                    <count-up class="item-counter" :end-val="counter" :options="options" />
+                    <div class="item-text">{{ desc + unitValue }}</div>
+                </div>
             </div>
         </div>
-    </div>
+    </el-col>
 </template>
 <script lang="ts" setup>
 import CountUp from 'vue-countup-v3'

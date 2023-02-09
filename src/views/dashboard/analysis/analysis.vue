@@ -5,26 +5,21 @@
                 icon-name="fa6-solid:user"
                 icon-color="#40c9c6"
                 label="总用户数"
-                value="1202"
+                value="3201"
             />
             <card-item
                 icon-name="lucide:locate"
                 icon-color="#36a3f7"
                 label="总访问数"
-                value="1202"
+                value="1320"
             />
             <card-item
                 icon-name="mdi:message-processing-outline"
                 icon-color="#f4516c"
                 label="消息"
-                value="1202"
+                value="20"
             />
-            <card-item
-                icon-name="ph:bug-bold"
-                icon-color="#e6a23c"
-                label="错误日志数"
-                value="1202"
-            />
+            <card-item icon-name="ph:bug-bold" icon-color="#e6a23c" label="错误日志" value="10" />
         </el-row>
         <!-- 作业实时统计 -->
         <job-statistics ref="refJobStatistics" class="mt-2px p-20px" />
