@@ -20,6 +20,8 @@ specifiers:
   commitizen: ^4.2.6
   cz-conventional-changelog: ^3.3.0
   cz-customizable: ^7.0.0
+  dayjs: ^1.11.7
+  echarts: ^5.4.1
   element-plus: ^2.2.28
   eslint: ^8.31.0
   eslint-config-airbnb-base: ^15.0.0
@@ -33,6 +35,7 @@ specifiers:
   nprogress: ^0.2.0
   pinia: ^2.0.28
   pinia-plugin-persist: ^1.0.0
+  pinia-plugin-persistedstate: ^3.0.2
   postcss-html: ^1.5.0
   prettier: ^2.8.2
   qs: ^6.11.0
@@ -52,6 +55,7 @@ specifiers:
   vite-plugin-compression: ^0.5.1
   vite-plugin-eslint: ^1.8.1
   vue: ^3.2.45
+  vue-countup-v3: ^1.1.0
   vue-router: ^4.1.6
   vue-tsc: ^1.0.11
 
@@ -60,13 +64,17 @@ dependencies:
   '@vueuse/components': 9.12.0_vue@3.2.45
   '@vueuse/core': 9.12.0_vue@3.2.45
   axios: 1.2.6
+  dayjs: 1.11.7
+  echarts: 5.4.1
   element-plus: 2.2.28_vue@3.2.45
   lodash: 4.17.21
   nprogress: 0.2.0
   pinia: 2.0.28_prq2uz4lho2pwp6irk4cfkrxwu
   pinia-plugin-persist: 1.0.0_pinia@2.0.28+vue@3.2.45
+  pinia-plugin-persistedstate: 3.0.2_pinia@2.0.28
   qs: 6.11.0
   vue: 3.2.45
+  vue-countup-v3: 1.1.0_vue@3.2.45
   vue-router: 4.1.6_vue@3.2.45
 
 devDependencies:
@@ -2157,6 +2165,10 @@ packages:
       path-type: 4.0.0
     dev: true
 
+  /countup.js/2.4.2:
+    resolution: {integrity: sha512-EExCcu5rd7ffBj65B3CVNuS1HddN1Y4WuTfJEuocJXwZlNnlXZQ4sD9M/Cq32ZS0zR38F9vGMCw/iFcVImrNbw==}
+    dev: false
+
   /create-require/1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     dev: true
@@ -2393,6 +2405,13 @@ packages:
   /eastasianwidth/0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
+
+  /echarts/5.4.1:
+    resolution: {integrity: sha512-9ltS3M2JB0w2EhcYjCdmtrJ+6haZcW6acBolMGIuf01Hql1yrIV01L1aRj7jsaaIULJslEP9Z3vKlEmnJaWJVQ==}
+    dependencies:
+      tslib: 2.3.0
+      zrender: 5.4.1
+    dev: false
 
   /editor/1.0.0:
     resolution: {integrity: sha512-SoRmbGStwNYHgKfjOrX2L0mUvp9bUVv0uPppZSOMAntEbcFtoC3MKF5b3T6HQPXKIV+QGY3xPO3JK5it5lVkuw==}
@@ -4416,6 +4435,14 @@ packages:
       vue-demi: 0.12.5_vue@3.2.45
     dev: false
 
+  /pinia-plugin-persistedstate/3.0.2_pinia@2.0.28:
+    resolution: {integrity: sha512-84vPyUhPA/8Pr+1mT1ioNb2d8z4tvdgYRqMQf8xyauOVBKjo0ZcRBwPQBV7ZAJG43Kwar43nXG2jU+ZMvAFFRQ==}
+    peerDependencies:
+      pinia: ^2.0.0
+    dependencies:
+      pinia: 2.0.28_prq2uz4lho2pwp6irk4cfkrxwu
+    dev: false
+
   /pinia/2.0.28_prq2uz4lho2pwp6irk4cfkrxwu:
     resolution: {integrity: sha512-YClq9DkqCblq9rlyUual7ezMu/iICWdBtfJrDt4oWU9Zxpijyz7xB2xTwx57DaBQ96UGvvTMORzALr+iO5PVMw==}
     peerDependencies:
@@ -5279,6 +5306,10 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
+  /tslib/2.3.0:
+    resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
+    dev: false
+
   /tslib/2.4.1:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
     dev: true
@@ -5597,6 +5628,15 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /vue-countup-v3/1.1.0_vue@3.2.45:
+    resolution: {integrity: sha512-yDKKlmOmGXlRTL+pHBhAakpqzBdrNpW4fuZzJPWtPkkZT+012rqZf9SDNoJ0fwRaumANKCBUTm5l8qBvrPBAWQ==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      countup.js: 2.4.2
+      vue: 3.2.45
+    dev: false
+
   /vue-demi/0.12.5_vue@3.2.45:
     resolution: {integrity: sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==}
     engines: {node: '>=12'}
@@ -5827,3 +5867,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zrender/5.4.1:
+    resolution: {integrity: sha512-M4Z05BHWtajY2241EmMPHglDQAJ1UyHQcYsxDNzD9XLSkPDqMq4bB28v9Pb4mvHnVQ0GxyTklZ/69xCFP6RXBA==}
+    dependencies:
+      tslib: 2.3.0
+    dev: false

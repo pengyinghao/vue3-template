@@ -8,7 +8,10 @@
             @select="onSelect"
         >
             <template v-for="(routeItem, index) in userStore.elementMenus" :key="index">
-                <el-menu-item v-if="routeItem.children?.length === 0" :index="routeItem.meta?.id">
+                <el-menu-item
+                    v-if="routeItem.children?.length === 0 && !routeItem.meta?.hidden"
+                    :index="routeItem.meta?.id"
+                >
                     <Icon :name="(routeItem.meta?.icon as string)" size="20" class="mr-5px" />
                     <template #title>{{ routeItem.meta?.title }}</template>
                 </el-menu-item>

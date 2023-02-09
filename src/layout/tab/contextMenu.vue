@@ -174,10 +174,10 @@ defineExpose({
     @apply rounded-4px z-99999;
 
     .menu-item {
-        transition: backgroundcolor var(--el-transition-duration);
+        transition: background-color var(--el-transition-duration);
         transition-timing-function: var(--el-transition-function-ease-in-out-bezier);
 
-        @apply flex items-center  plr-15px h-35px cursor-pointer dark:bg-dark-3 dark:c-white;
+        @apply flex items-center  plr-15px h-35px cursor-pointer dark:bg-dark dark:c-white;
 
         &.disabled {
             cursor: not-allowed;

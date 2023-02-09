@@ -5,6 +5,7 @@ module.exports = {
         indentation: 4,
         'selector-class-pattern': null,
         'value-keyword-case': 'lower',
+        'no-descending-specificity': null,
         'color-function-notation': 'legacy',
         'declaration-block-trailing-semicolon': null,
         'selector-pseudo-element-no-unknown': [

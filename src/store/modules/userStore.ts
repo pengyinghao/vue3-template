@@ -16,7 +16,7 @@ interface userStore {
     /** 处理果的路由信息 */
     routes: RouteRecordRaw[]
     /** 动态路由 */
-    dynmicRoute: (() => void)[]
+    dynamicRoute: (() => void)[]
 }
 
 export default defineStore({
@@ -28,12 +28,13 @@ export default defineStore({
         routes: [],
         originMenus: [],
         elementMenus: [],
-        dynmicRoute: []
+        dynamicRoute: []
     }),
     actions: {
         /** 退出登录 */
         loginOut() {
-            this.dynmicRoute.forEach((fn) => fn())
+            // 通过动态路由移出 路由信息
+            this.dynamicRoute.forEach((fn) => fn())
             this.$reset()
         },
         /** 创建路由 */
@@ -56,13 +57,8 @@ export default defineStore({
         }
     },
     persist: {
-        enabled: true,
-        strategies: [
-            {
-                key: 'user',
-                storage: sessionStorage,
-                paths: ['info']
-            }
-        ]
+        key: 'user',
+        storage: sessionStorage,
+        paths: ['info']
     }
 })

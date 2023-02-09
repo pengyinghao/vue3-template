@@ -1,0 +1,36 @@
+{
+    "fileheader.customMade": {
+        "Author": "PengYH",
+        "Date": "YYYY-MM-DD",
+        "Description": ""
+    },
+    "explorer.compactFolders": false,
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[less]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "cSpell.words": [
+        "countup",
+        "echarts",
+        "iconify",
+        "nprogress",
+        "pinia"
+    ]
+}

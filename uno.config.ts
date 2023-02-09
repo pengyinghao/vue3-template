@@ -22,10 +22,9 @@ export default defineConfig({
     theme: {
         colors: {
             dark: {
-                DEFAULT: '#21252a',
+                DEFAULT: 'var(--el-bg-color-overlay)',
                 1: 'var(--dark1)',
-                2: 'var(--el-border-color)',
-                3: 'var(--el-bg-color-overlay)'
+                2: 'var(--el-border-color)'
             },
             primary: {
                 DEFAULT: 'var(--el-color-primary)',
@@ -42,6 +41,7 @@ export default defineConfig({
     rules: [
         [/^flex-grow-(\d)$/, ([, d]) => ({ 'flex-grow': d })],
         [/^plr-(.*)$/, ([, p]) => ({ 'padding-left': p, 'padding-right': p })],
-        [/^ptb-(.*)$/, ([, p]) => ({ 'padding-top': p, 'padding-bottom': p })]
+        [/^ptb-(.*)$/, ([, p]) => ({ 'padding-top': p, 'padding-bottom': p })],
+        [/rounded-el-border/, () => ({ 'border-radius': 'var(--el-border-radius-base)' })]
     ]
 })

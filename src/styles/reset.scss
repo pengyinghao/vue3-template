@@ -13,9 +13,11 @@ html {
 }
 
 html.dark {
-    background-color: #1a1a1c;
+    background-color: var(--el-bg-color-page);
+}
 
-    --el-bg-color: #21252a;
+#nprogress .bar {
+    background-color: var(--el-color-primary) !important;
 }
 
 :root {

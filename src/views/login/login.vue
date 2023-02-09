@@ -33,7 +33,7 @@
                     <div
                         class="w-150px h-32px ml-34px border border-#DCDFE6 rounded-4px cursor-pointer"
                     >
-                        <img :src="code" class="w-100% h-100%" alt="" />
+                        <img :src="code" class="wh-full" alt="" />
                     </div>
                 </div>
             </el-form>

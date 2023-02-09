@@ -17,7 +17,7 @@
                         v-if="!fixedTabs.includes(tab.path)"
                         name="ep:close"
                         size="12"
-                        class="ml-10px"
+                        class="ml-5px"
                         @click.prevent.stop="onCloseCurrTab(tab)"
                     />
                 </router-link>

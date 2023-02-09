@@ -1,9 +1,11 @@
-import { defineStore } from 'pinia'
+import { PersistedStateOptions } from 'pinia-plugin-persistedstate'
 
+import { defineStore } from 'pinia'
+import { DEFAULT_APP_STORE } from '@/core/config'
 /** 动画类型 */
 type animationType = 'zoom-fade' | 'zoom-out' | 'fade-slide' | 'fade' | 'fade-bottom' | 'fade-scale'
 
-interface AppStore {
+export interface AppStore {
     /** 主题模式 */
     themeMode: 'dark' | 'light'
     /** 跟随系统主题 */
@@ -37,28 +39,10 @@ interface AppStore {
 export default defineStore({
     id: 'app',
     state: (): AppStore => ({
-        themeMode: 'light',
-        followSystemTheme: false,
-        theme: '#1890ff',
-        menuIsCollapse: false,
-        menuCollapseWidth: 68,
-        menuWidth: 220,
-        disableAnimation: false,
-        animationType: 'fade-slide',
-        showPreferenceSetting: false,
-        showBreadcrumb: true,
-        showTab: true,
-        keepAlive: true,
-        keepAliveCounter: 10,
-        size: 'default'
+        ...DEFAULT_APP_STORE
     }),
     persist: {
-        enabled: true,
-        strategies: [
-            {
-                key: 'app',
-                storage: localStorage
-            }
-        ]
-    }
+        key: 'app',
+        storage: localStorage
+    } as PersistedStateOptions
 })

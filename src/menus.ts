@@ -167,7 +167,7 @@ export const menuInfos = [
         component: 'test/test',
         url: '/test',
         redirect: '',
-        hidden: false,
+        hidden: true,
         children: []
     }
 ]

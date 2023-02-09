@@ -1,28 +1,26 @@
-import NProgress from 'nprogress'
 import { Router, RouteRecordRaw } from 'vue-router'
-NProgress.configure({ showSpinner: false })
+import { LOGIN_PATH, ALLOW_LIST } from '@/core/config'
+import NProgress from '@/plugins/nprogress'
 
-const loginPath = '/login' // 登录地址
-const allowList = ['/login', '/404']
 /** 创建路由守卫 */
 export function createRouterGuard(router: Router) {
     router.beforeEach(async (to, form, next) => {
         const userStore = useUserStore()
         NProgress.start()
-        if (allowList.includes(to.path)) {
+        if (ALLOW_LIST.includes(to.path)) {
             next()
         } else if (userStore.info.userName) {
-            if (userStore.dynmicRoute.length === 0) {
+            if (userStore.dynamicRoute.length === 0) {
                 const routes = await userStore.generateRoutes()
                 routes.forEach((r: RouteRecordRaw) => {
-                    userStore.dynmicRoute.push(router.addRoute(r))
+                    userStore.dynamicRoute.push(router.addRoute(r))
                 })
                 next({ ...to, replace: true })
             } else {
                 next()
             }
         } else {
-            next(loginPath)
+            next(LOGIN_PATH)
         }
     })
 
