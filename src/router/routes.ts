@@ -8,7 +8,7 @@ export const routes: RouteRecordRaw[] = [
         component: Layout,
         children: [
             {
-                name: 'personInformation',
+                name: 'PersonInformation',
                 path: '/personInformation',
                 component: () =>
                     import('@/views/systemManage/userInfo/personInformation/personInformation.vue'),

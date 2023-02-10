@@ -2,7 +2,7 @@
     <div class="item">
         <div class="item-content">
             <div>
-                <icon :name="icon" class="pl-6px" style="vertical-align: baseline">
+                <icon :name="icon" size="22" class="pl-6px" style="vertical-align: baseline">
                     <span class="item-title">{{ title }}</span>
                 </icon>
             </div>
