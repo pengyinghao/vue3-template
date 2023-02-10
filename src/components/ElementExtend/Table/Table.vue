@@ -34,12 +34,8 @@ const paginationState = reactive({
     total: 1000
 })
 </script>
-<style>
-.el-table__header th {
-    background-color: #e9ebf3;
-}
-
-.dark .el-table__header th {
-    background-color: #292e34;
+<style scoped>
+:deep(.el-table__header) th {
+    @apply bg-#e9ebf3 dark:bg-#292e34;
 }
 </style>
