@@ -36,6 +36,7 @@ interface ContentMenuOptions {
     /** 操作 */
     operation: Operation
 }
+
 const appStore = useAppStore()
 const tabStore = useTabStore()
 const router = useRouter()
@@ -104,7 +105,10 @@ const hideContextMenu = () => {
 }
 
 const tabCurrentIndex = computed(() => {
-    return (selectTab.value && tabs.value.indexOf(selectTab.value)) || -1
+    return (
+        (selectTab.value && tabs.value.findIndex((item) => item.path === selectTab.value?.path)) ||
+        0
+    )
 })
 
 /** 关闭左侧标签 */

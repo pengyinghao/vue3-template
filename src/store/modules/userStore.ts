@@ -5,7 +5,12 @@ import { menuInfos } from '../../menus'
 import createRoute from '@/router/guard/generatorDynamicRouter'
 
 interface UserInfo {
+    /** 用户名称 */
     userName: string
+    /** 头像地址 */
+    avatar: string
+    /** 用户名 */
+    account: string
 }
 interface userStore {
     info: UserInfo
@@ -23,6 +28,8 @@ export default defineStore({
     id: 'user',
     state: (): userStore => ({
         info: {
+            account: 'account',
+            avatar: 'https://picsum.photos/200',
             userName: ''
         },
         routes: [],

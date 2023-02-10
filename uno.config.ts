@@ -23,8 +23,7 @@ export default defineConfig({
         colors: {
             dark: {
                 DEFAULT: 'var(--el-bg-color-overlay)',
-                1: 'var(--dark1)',
-                2: 'var(--el-border-color)'
+                1: 'var(--el-bg-color-overlay)'
             },
             primary: {
                 DEFAULT: 'var(--el-color-primary)',
@@ -35,6 +34,9 @@ export default defineConfig({
                     9: 'var(--el-color-primary-light-9)'
                 },
                 dark: 'var(--el-color-primary-dark-2)'
+            },
+            border: {
+                color: 'var(--el-border-color)'
             }
         }
     },

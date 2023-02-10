@@ -1,32 +1,39 @@
 <template>
-    <div class="pb-30px">
-        <el-row :gutter="20">
-            <card-item
-                icon-name="fa6-solid:user"
-                icon-color="#40c9c6"
-                label="总用户数"
-                value="3201"
-            />
-            <card-item
-                icon-name="lucide:locate"
-                icon-color="#36a3f7"
-                label="总访问数"
-                value="1320"
-            />
-            <card-item
-                icon-name="mdi:message-processing-outline"
-                icon-color="#f4516c"
-                label="消息"
-                value="20"
-            />
-            <card-item icon-name="ph:bug-bold" icon-color="#e6a23c" label="错误日志" value="10" />
-        </el-row>
-        <!-- 作业实时统计 -->
-        <job-statistics ref="refJobStatistics" class="mt-2px p-20px" />
-        <!-- 对象存储 -->
-        <object-storage class="mt-20px p-20px" />
-        <!-- 用户使用趋势 -->
-        <user-use-trend ref="refUserUseTrend" class="mt-20px p-20px" />
+    <div class="pb-30px flex">
+        <div class="flex-1">
+            <el-row :gutter="20">
+                <card-item
+                    icon-name="fa6-solid:user"
+                    icon-color="#40c9c6"
+                    label="总用户数"
+                    value="3201"
+                />
+                <card-item
+                    icon-name="lucide:locate"
+                    icon-color="#36a3f7"
+                    label="总访问数"
+                    value="1320"
+                />
+                <card-item
+                    icon-name="mdi:message-processing-outline"
+                    icon-color="#f4516c"
+                    label="消息"
+                    value="20"
+                />
+                <card-item
+                    icon-name="ph:bug-bold"
+                    icon-color="#e6a23c"
+                    label="异常日志"
+                    value="10"
+                />
+            </el-row>
+            <!-- 作业实时统计 -->
+            <job-statistics ref="refJobStatistics" class="mt-2px p-20px" />
+            <!-- 对象存储 -->
+            <object-storage class="mt-20px p-20px" />
+            <!-- 用户使用趋势 -->
+            <user-use-trend ref="refUserUseTrend" class="mt-20px p-20px" />
+        </div>
     </div>
 </template>
 <script lang="ts" setup>
@@ -57,11 +64,11 @@ window.addEventListener('resize', throttledFn)
 }
 
 :deep(.el-card__header) {
-    @apply border-none p-0;
+    @apply border-none;
 }
 
-:deep(.el-card__body) {
+/* :deep(.el-card__body) {
     padding: 0 20px;
     width: 100%;
-}
+} */
 </style>

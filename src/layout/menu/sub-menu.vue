@@ -1,8 +1,8 @@
 <template>
     <el-sub-menu v-if="!route.meta?.hidden" :index="(route.meta?.id as string)">
         <template #title>
-            <i class="flex-center mr-5px">
-                <Icon :name="(route.meta?.icon as string)"></Icon>
+            <i v-if="route.meta?.icon" class="flex-center mr-5px">
+                <Icon :name="(route.meta.icon as string)"></Icon>
             </i>
             <span>{{ route.meta?.title }}</span>
         </template>

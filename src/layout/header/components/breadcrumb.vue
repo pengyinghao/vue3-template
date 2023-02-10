@@ -1,11 +1,13 @@
 <template>
     <el-breadcrumb v-show="appStore.showBreadcrumb" separator="/">
-        <el-breadcrumb-item v-for="(item, index) in routes" :key="index" :to="{ path: item.path }">
-            <div class="h-16px flex items-center">
-                <Icon v-if="item.meta?.icon" :name="item.meta.icon" />
-                <span class="ml-5px">{{ item.meta?.title }}</span>
-            </div>
-        </el-breadcrumb-item>
+        <template v-for="(item, index) in routes" :key="index">
+            <el-breadcrumb-item v-if="item.meta?.title" :to="{ path: item.path }">
+                <div class="h-16px flex items-center">
+                    <Icon v-if="item.meta?.icon" :name="item.meta.icon" />
+                    <span class="ml-5px">{{ item.meta?.title }}</span>
+                </div>
+            </el-breadcrumb-item>
+        </template>
     </el-breadcrumb>
 </template>
 <script lang="ts" setup>

@@ -6,7 +6,17 @@ export const routes: RouteRecordRaw[] = [
         path: '/',
         redirect: '/dashboard/analysis',
         component: Layout,
-        children: []
+        children: [
+            {
+                name: 'personInformation',
+                path: '/personInformation',
+                component: () =>
+                    import('@/views/systemManage/userInfo/personInformation/personInformation.vue'),
+                meta: {
+                    title: '个人信息'
+                }
+            }
+        ]
     },
     {
         name: 'login',

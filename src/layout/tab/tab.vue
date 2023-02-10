@@ -84,7 +84,7 @@ const onCloseCurrTab = (tab: RouteRecordRaw) => {
     width: fit-content;
     color: var(--el-color-black);
 
-    @apply ptb-6px plr-8px mr-8px min-w-50px flex-center  light:bg-#eee dark:bg-dark-2 rounded-5px cursor-pointer;
+    @apply ptb-6px plr-8px mr-8px min-w-50px flex-center  light:bg-#eee dark:bg-border-color rounded-5px cursor-pointer;
     @apply flex items-center decoration-none light:c-black dark:c-white;
 
     &.active {
