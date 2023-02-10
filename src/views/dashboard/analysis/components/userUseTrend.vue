@@ -122,7 +122,9 @@ const getOption = () => {
 
 const refChart = ref()
 const chart = computed(() => echarts.init(refChart.value))
-const resize = () => chart.value.resize()
+const resize = () => {
+    chart.value.resize()
+}
 
 /** 获取统计数据信息 */
 const getData = () => {

@@ -26,7 +26,7 @@
         <!-- 对象存储 -->
         <object-storage class="mt-20px p-20px" />
         <!-- 用户使用趋势 -->
-        <user-use-trend class="mt-20px p-20px" />
+        <user-use-trend ref="refUserUseTrend" class="mt-20px p-20px" />
     </div>
 </template>
 <script lang="ts" setup>
@@ -35,9 +35,11 @@ import { CardItem, JobStatistics, ObjectStorage, UserUseTrend } from './componen
 defineOptions({ name: 'Analysis' })
 
 const refJobStatistics = ref<InstanceType<typeof JobStatistics>>()
+const refUserUseTrend = ref<InstanceType<typeof UserUseTrend>>()
 
 const throttledFn = useThrottleFn(() => {
     refJobStatistics.value?.resize()
+    refUserUseTrend.value?.resize()
 }, 300)
 
 watch(

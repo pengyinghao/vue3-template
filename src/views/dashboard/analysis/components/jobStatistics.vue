@@ -151,12 +151,17 @@ const getOptions = () => {
 }
 
 const refChart = ref()
-const chart = computed(() => {
-    return echarts.init(refChart.value)
-})
-onMounted(() => {
-    chart.value.setOption(getOptions())
-})
+const chart = computed(() => echarts.init(refChart.value))
+/** 获取统计数据信息 */
+const getData = () => {
+    setTimeout(() => {
+        nextTick(() => {
+            const options = getOptions()
+            chart.value.setOption(options)
+        })
+    }, Math.random() * 1000)
+}
+getData()
 
 const resize = () => {
     chart.value.resize()
