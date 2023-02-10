@@ -22,7 +22,7 @@ module.exports = {
         ['components', '组件相关'],
         ['hooks', 'hook 相关'],
         ['utils', 'utils 相关'],
-        ['ant design', '对 ant design 的调整'],
+        ['element ui', '对 element ui 的调整'],
         ['styles', '样式相关'],
         ['deps', '项目依赖'],
         ['auth', '对 auth 修改'],
