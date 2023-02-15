@@ -1,8 +1,9 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import { resolve } from 'path'
 import { pluginsConfig } from './build/pluginConfig'
 
-export default defineConfig(({ command }) => {
+export default defineConfig(({ command, mode }) => {
+    const envs = loadEnv(mode, process.cwd(), ['VITE_BASE_URL'])
     return {
         plugins: pluginsConfig(command === 'build'),
         resolve: {
@@ -11,7 +12,15 @@ export default defineConfig(({ command }) => {
             }
         },
         server: {
-            host: '0.0.0.0'
+            host: '0.0.0.0',
+            open: envs.VITE_OPEN_BROWSER === 'true',
+            proxy: {
+                '/api': {
+                    secure: false,
+                    target: envs.VITE_BASE_URL,
+                    changeOrigin: true
+                }
+            }
         },
         build: {
             outDir: 'dist',

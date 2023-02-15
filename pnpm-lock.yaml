@@ -8,6 +8,7 @@ specifiers:
   '@types/lodash': ^4.14.191
   '@types/node': ^18.11.18
   '@types/nprogress': ^0.2.0
+  '@types/qs': ^6.9.7
   '@types/store': ^2.0.2
   '@typescript-eslint/eslint-plugin': ^5.48.1
   '@typescript-eslint/parser': ^5.48.1
@@ -84,6 +85,7 @@ devDependencies:
   '@types/lodash': 4.14.191
   '@types/node': 18.11.18
   '@types/nprogress': 0.2.0
+  '@types/qs': 6.9.7
   '@types/store': 2.0.2
   '@typescript-eslint/eslint-plugin': 5.48.1_3jon24igvnqaqexgwtxk6nkpse
   '@typescript-eslint/parser': 5.48.1_iukboom6ndih5an6iafl45j2fe
@@ -1057,6 +1059,10 @@ packages:
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
+    dev: true
+
+  /@types/qs/6.9.7:
+    resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==}
     dev: true
 
   /@types/semver/7.3.13:
