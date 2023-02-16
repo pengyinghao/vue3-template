@@ -12,7 +12,7 @@
 }
 
 .el-checkbox {
-    --el-checkbox-font-size: var(--el-font-size-base);
+    --el-checkbox-font-size: var(--el-font-size-base) !important;
 }
 
 .el-breadcrumb,
