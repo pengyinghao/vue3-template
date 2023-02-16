@@ -4,7 +4,7 @@
 
 ## 简介
 
-[vue3 template](https://github.com/honghuangdc/soybean-admin) 是一个基于 Vue3、Vite4、TypeScript、Element Plus、Pinia 和 UnoCSS 的清新优雅的中后台模版，它使用了最新的前端技术栈，内置丰富的主题配置，有着极高的代码规范，开箱即用的中后台前端解决方案，也可用于学习参考。
+[vue3 template](https://github.com/honghuangdc/soybean-admin) 是一个基于 Vue3、Vite4、TypeScript、Element Plus、Pinia 和 UnoCSS 的清新优雅的中后台模版，它使用了最新的前端技术栈，内置丰富的主题配置，有着极高的代码规范，用于参考学习。
 
 ## 特性
 
@@ -12,13 +12,14 @@
 - **TypeScript**: 应用程序级 JavaScript 的语言
 - **主题**：丰富可配置的主题、暗黑模式，基于原子 css 框架 - UnoCss 的动态主题颜色
 - **代码规范**：丰富的规范插件及极高的代码规范
+- **组件**：二次封装原有组件，继承所有属性及方法
 
 ## 项目示例图
 
 ![](https://s2.loli.net/2023/02/16/36QvpJfgFKDW9y1.png)
 ![](https://s2.loli.net/2023/02/16/AyNt5O9oCDraYZW.png)
 ![](https://s2.loli.net/2023/02/16/gzUXVj1wcQZi357.png)
-![](https://s2.loli.net/2023/02/16/p7WTrIAZ4e69ytU.png)
+![](https://s2.loli.net/2023/02/16/on9agRZQ4WFErzY.png)
 
 
 ## 安装使用
