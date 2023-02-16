@@ -1,7 +1,7 @@
 import { AxiosError, AxiosResponse } from 'axios'
 import { ElMessage } from 'element-plus'
-import router from '@/router'
 import { ERROR_STATUS, requestConfig, ResponseData, ResponseEnum } from './types'
+import router from '@/router'
 
 /**
  * 处理 axios 返回信息
@@ -36,12 +36,12 @@ export const handleResponseError = (error: AxiosError) => {
     const { response } = error
     if (response?.status) {
         const status = response.status
+
         // 会话过期
         if (status === ResponseEnum.unauthorized) {
+            router.push({ path: '/login' })
             useUserStore().loginOut()
-            router.replace({ path: '/login' })
         }
-
         ElMessage({
             type: 'error',
             message: ERROR_STATUS[status as keyof typeof ERROR_STATUS]

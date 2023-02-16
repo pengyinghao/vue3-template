@@ -1,4 +1,4 @@
-import qs from 'qs'
+// import qs from 'qs'
 import { request } from './baseRequest'
 import type { requestConfig } from './types'
 
@@ -18,13 +18,13 @@ export function requestGet<T>(url: string, config?: requestConfig) {
         ...config
     }
 
-    if (config && config.params) {
-        newConfig.paramsSerializer = () => {
-            return qs.stringify(config.params, {
-                arrayFormat: 'repeat'
-            })
-        }
-    }
+    // if (config && config.params) {
+    //     newConfig.paramsSerializer = () => {
+    //         return qs.stringify(config.params, {
+    //             arrayFormat: 'repeat'
+    //         })
+    //     }
+    // }
     return sendRequest<T>(newConfig)
 }
 
