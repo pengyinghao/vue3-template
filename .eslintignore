@@ -11,4 +11,5 @@ typings
 .local
 .eslintrc.js
 prettier.js
+/server
 
