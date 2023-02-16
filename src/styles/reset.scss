@@ -32,6 +32,16 @@ html.dark {
     --el-dialog-content-font-size: var(--el-font-size-base);
 }
 
-.el-breadcrumb {
+.el-pagination {
+    --el-pagination-font-size: var(--el-font-size-base);
+}
+
+.el-form-item--default {
+    --el-form-label-font-size: var(--el-font-size-base) !important;
+    --font-size: var(--el-font-size-base) !important;
+}
+
+.el-breadcrumb,
+.el-table {
     font-size: var(--el-font-size-base);
 }

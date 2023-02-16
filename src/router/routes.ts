@@ -1,11 +1,10 @@
 import { RouteRecordRaw } from 'vue-router'
-import Layout from '@/layout/index.vue'
 
 export const routes: RouteRecordRaw[] = [
     {
         path: '/',
         redirect: '/dashboard/analysis',
-        component: Layout,
+        component: () => import('@/layout/index.vue'),
         children: [
             {
                 name: 'PersonInformation',
