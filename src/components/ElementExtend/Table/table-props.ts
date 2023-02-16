@@ -1,3 +1,5 @@
+import { ExtractPropTypes, PropType } from 'vue'
+
 export const tableProps = {
     /** 是否显示分页 */
     pagination: {
@@ -28,7 +30,11 @@ export const tableProps = {
     reload: {
         type: Boolean,
         default: false
+    },
+    /** 默认显示列 */
+    defaultColumns: {
+        type: Array as PropType<string[]>,
+        default: () => []
     }
 }
-
-// export type PaginationProps = ExtractPropTypes<typeof paginationProps>
+export type TableProps = ExtractPropTypes<typeof tableProps>

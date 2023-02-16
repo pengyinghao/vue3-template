@@ -1,0 +1,13 @@
+@import url("element-plus/theme-chalk/el-table.css");
+@import url("element-plus/theme-chalk/el-pagination.css");
+@import url("element-plus/theme-chalk/el-loading.css");
+@import url("element-plus/theme-chalk/el-popover.css");
+@import url("element-plus/theme-chalk/el-checkbox.css");
+
+.el-table__header th {
+    background-color: #e9ebf3 !important;
+}
+
+.dark .el-table__header th {
+    background-color: #292e34;
+}
