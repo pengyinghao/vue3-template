@@ -2,8 +2,29 @@
     <PageContainer>
         <template #header>
             <el-form inline @submit.prevent>
-                <el-form-item label="资源名称：">
+                <el-form-item label="姓名：">
                     <el-input v-model="queryParams.name" class="w-250px" @change="onQuery" />
+                </el-form-item>
+                <el-form-item label="性别：">
+                    <el-select v-model="queryParams.sex" class="w-250px">
+                        <el-option label="男" value="男" />
+                        <el-option label="女" value="女" />
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="是否已婚：">
+                    <el-select v-model="queryParams.married" class="w-250px">
+                        <el-option label="是" value="是" />
+                        <el-option label="否" value="否" />
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="生日：">
+                    <el-date-picker v-model="queryParams.birth" type="date" />
+                </el-form-item>
+                <el-form-item label="地址：">
+                    <el-input v-model="queryParams.addr" class="w-250px" @change="onQuery" />
+                </el-form-item>
+                <el-form-item label="邮箱：">
+                    <el-input v-model="queryParams.email" class="w-250px" @change="onQuery" />
                 </el-form-item>
                 <el-form-item>
                     <el-button type="primary" @click.stop="onQuery">
@@ -12,25 +33,29 @@
                     <el-button>
                         <icon name="ep:brush">重置</icon>
                     </el-button>
+                    <el-button @click="onClick">全选/反选</el-button>
                 </el-form-item>
             </el-form>
         </template>
-        <c-table
-            v-model:reload="reload"
-            :params="queryParams"
-            url="/console/data_storage_resources"
-        >
-            <el-table-column label="资源名称" prop="name" sortable></el-table-column>
-            <el-table-column label="资源类型" prop="category"></el-table-column>
-            <el-table-column label="集群类型" prop="categoryName"></el-table-column>
-            <el-table-column label="所有者" prop="ownerName"></el-table-column>
-            <el-table-column label="数据大小" prop="storageUsage"></el-table-column>
-            <el-table-column label="创建时间" prop="createdDt"></el-table-column>
-            <el-table-column label="操作">
-                <template #default>
-                    <el-button link type="primary" size="small">Detail</el-button>
-                    <el-button link type="primary" size="small">Edit</el-button>
-                </template>
+        <c-table ref="refTable" v-model:reload="reload" url="/user" :params="queryParams">
+            <template #table-header>
+                <el-button type="primary">
+                    <icon name="ep:plus">新增用户</icon>
+                </el-button>
+            </template>
+            <el-table-column type="selection" width="55" />
+            <el-table-column type="index" width="50" />
+            <el-table-column label="id" prop="id" sortable></el-table-column>
+            <el-table-column label="姓名" prop="name" sortable></el-table-column>
+            <el-table-column label="年龄" prop="age"></el-table-column>
+            <el-table-column label="财产" prop="asset"></el-table-column>
+            <el-table-column label="是否已婚" prop="married"></el-table-column>
+            <el-table-column label="生日" prop="birth"></el-table-column>
+            <el-table-column label="地址" prop="addr" show-overflow-tooltip></el-table-column>
+            <el-table-column label="邮箱" prop="email"></el-table-column>
+            <el-table-column label="操作" type="operation">
+                <el-button link type="primary" size="small">修改</el-button>
+                <el-button link type="danger" size="small">删除</el-button>
             </el-table-column>
         </c-table>
     </PageContainer>
@@ -38,10 +63,23 @@
 <script lang="ts" setup>
 import { CTable, PageContainer, Icon } from '@/components'
 const queryParams = reactive({
-    name: undefined
+    name: undefined,
+    birth: undefined,
+    sex: undefined,
+    married: undefined,
+    addr: '',
+    email: ''
 })
+
 const reload = ref(false)
 const onQuery = () => {
     reload.value = true
+}
+
+const refTable = ref<InstanceType<typeof CTable>>()
+
+const onClick = () => {
+    refTable.value.cl
+    // refTable.value.toggleAllSelection()
 }
 </script>

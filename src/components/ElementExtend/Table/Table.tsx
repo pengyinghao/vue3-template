@@ -5,19 +5,25 @@ import { TableProps, tableProps } from './table-props'
 import './table.scss'
 import { useDataSource } from './composable/userDataSource'
 import tableColumn from './TableColumn'
+import initMethods from './tableMethods'
 
 export default defineComponent({
     directives: { loading: vLoading },
     props: tableProps,
     emits: ['load', 'update:reload'],
     setup(props: TableProps, context: SetupContext) {
-        const { slots, attrs } = context
+        const { slots, attrs, expose } = context
 
         const tableHeader = slots['table-header']
         const tableFooter = slots['table-footer']
 
         const { paginationState, table, onSortChange } = useDataSource(props, context)
         const { renderVNode } = tableColumn(props, context)
+
+        // 初始化 el-table 方法
+        const refTable = ref()
+        const methodObj = initMethods(refTable)
+        expose(methodObj)
 
         return () => {
             // 分页器
@@ -38,6 +44,7 @@ export default defineComponent({
                     <div class="c-table-header mb-10px">{tableHeader && tableHeader()}</div>
                     {/* 表格区域 */}
                     <ElTable
+                        ref={refTable}
                         v-loading={table.loading}
                         data={table.dataSource}
                         {...attrs}
