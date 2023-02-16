@@ -76,10 +76,9 @@ const onQuery = () => {
     reload.value = true
 }
 
-const refTable = ref<InstanceType<typeof CTable>>()
+const refTable = ref()
 
 const onClick = () => {
-    refTable.value.cl
-    // refTable.value.toggleAllSelection()
+    refTable.value.toggleAllSelection()
 }
 </script>
