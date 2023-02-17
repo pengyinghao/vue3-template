@@ -70,14 +70,12 @@ const queryParams = reactive({
     addr: '',
     email: ''
 })
-
 const reload = ref(false)
 const onQuery = () => {
     reload.value = true
 }
 
 const refTable = ref()
-
 const onClick = () => {
     refTable.value.toggleAllSelection()
 }

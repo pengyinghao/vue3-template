@@ -1,6 +1,6 @@
 <template>
     <div class="pb-30px flex">
-        <div class="flex-1">
+        <div class="flex-1 overflow-hidden">
             <el-row :gutter="20">
                 <card-item
                     icon-name="fa6-solid:user"
@@ -37,14 +37,14 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { useThrottleFn } from '@vueuse/core'
+import { useDebounceFn } from '@vueuse/core'
 import { CardItem, JobStatistics, ObjectStorage, UserUseTrend } from './components'
 defineOptions({ name: 'Analysis' })
 
 const refJobStatistics = ref<InstanceType<typeof JobStatistics>>()
 const refUserUseTrend = ref<InstanceType<typeof UserUseTrend>>()
 
-const throttledFn = useThrottleFn(() => {
+const throttledFn = useDebounceFn(() => {
     refJobStatistics.value?.resize()
     refUserUseTrend.value?.resize()
 }, 300)
@@ -66,9 +66,4 @@ window.addEventListener('resize', throttledFn)
 :deep(.el-card__header) {
     @apply border-none;
 }
-
-/* :deep(.el-card__body) {
-    padding: 0 20px;
-    width: 100%;
-} */
 </style>
