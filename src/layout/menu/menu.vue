@@ -1,23 +1,25 @@
 <template>
     <div>
         <logo />
-        <el-menu
-            :default-active="route.meta?.id"
-            :collapse="appStore.menuIsCollapse"
-            class="aside-menu"
-            @select="onSelect"
-        >
-            <template v-for="(routeItem, index) in userStore.elementMenus" :key="index">
-                <el-menu-item
-                    v-if="routeItem.children?.length === 0 && !routeItem.meta?.hidden"
-                    :index="routeItem.meta?.id"
-                >
-                    <Icon :name="(routeItem.meta?.icon as string)" size="20" class="mr-5px" />
-                    <template #title>{{ routeItem.meta?.title }}</template>
-                </el-menu-item>
-                <sub-menu v-else :route="routeItem"></sub-menu>
-            </template>
-        </el-menu>
+        <el-scrollbar style="height: calc(100% - 56px)">
+            <el-menu
+                :default-active="route.meta?.id"
+                :collapse="appStore.menuIsCollapse"
+                class="aside-menu"
+                @select="onSelect"
+            >
+                <template v-for="(routeItem, index) in userStore.elementMenus" :key="index">
+                    <el-menu-item
+                        v-if="routeItem.children?.length === 0 && !routeItem.meta?.hidden"
+                        :index="routeItem.meta?.id"
+                    >
+                        <Icon :name="(routeItem.meta?.icon as string)" size="20" class="mr-5px" />
+                        <template #title>{{ routeItem.meta?.title }}</template>
+                    </el-menu-item>
+                    <sub-menu v-else :route="routeItem"></sub-menu>
+                </template>
+            </el-menu>
+        </el-scrollbar>
     </div>
 </template>
 <script lang="ts" setup>
