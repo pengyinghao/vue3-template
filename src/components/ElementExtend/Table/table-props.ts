@@ -12,7 +12,7 @@ export const tableProps = {
         default: ''
     },
     /** 默认数据源 */
-    dataSource: {
+    data: {
         type: Array,
         default: () => []
     },

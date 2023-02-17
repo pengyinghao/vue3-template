@@ -80,8 +80,6 @@ export function useDataSource(props: TableProps, context: SetupContext) {
     onBeforeMount(() => {
         if (props.init && props.url) {
             getTableData()
-        } else if (props.dataSource) {
-            table.dataSource = props.dataSource
         }
     })
 
