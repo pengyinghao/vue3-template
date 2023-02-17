@@ -40,4 +40,8 @@ interface SystemMenu {
     componentName?: string
     /** 内部网页链接地址 */
     href?: string
+    /** 外部链接或者iframe链接 */
+    outPageUrl?: string
+    /** 页面是否缓存 */
+    keepAlive?: boolean
 }

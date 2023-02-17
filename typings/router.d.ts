@@ -20,5 +20,7 @@ declare module 'vue-router' {
         href?: string
         /** 是否为单级页面 */
         singleLevel?: boolean
+        /** iframe页面url */
+        outPageUrl?:string
     }
 }

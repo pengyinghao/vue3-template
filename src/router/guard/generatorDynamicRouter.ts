@@ -30,6 +30,8 @@ function markRoute(page: SystemMenu, component: any) {
         redirect,
         showIndex,
         componentName,
+        outPageUrl,
+        keepAlive,
         href
     } = page
     const currentRouter: RouteRecordRaw = {
@@ -45,7 +47,8 @@ function markRoute(page: SystemMenu, component: any) {
             icon,
             openType,
             hidden,
-            keepAlive: true,
+            outPageUrl,
+            keepAlive,
             href,
             showIndex
         }

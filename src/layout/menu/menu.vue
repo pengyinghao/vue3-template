@@ -37,10 +37,13 @@ const userStore = useUserStore()
 
 const onSelect = (menuId: string) => {
     const menu = userStore.originMenus.find((item) => `${item.id}` === menuId)
-    if (menu && menu.url) {
-        router.push(menu.url)
-    } else {
-        router.push('/dashboard')
+    if (menu) {
+        const { openType, url, outPageUrl } = menu
+        if (openType === 0) {
+            router.push(url)
+        } else if (openType === 1) {
+            window.open(outPageUrl, '_black')
+        }
     }
 }
 </script>

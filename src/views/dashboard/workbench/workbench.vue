@@ -62,6 +62,7 @@
 </template>
 <script lang="ts" setup>
 import { CTable, PageContainer, Icon } from '@/components'
+defineOptions({ name: 'Workbench' })
 const queryParams = reactive({
     name: undefined,
     birth: undefined,
