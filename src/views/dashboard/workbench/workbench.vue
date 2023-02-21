@@ -45,14 +45,14 @@
             </template>
             <el-table-column type="selection" width="55" />
             <el-table-column type="index" width="50" />
-            <el-table-column label="id" prop="id" sortable></el-table-column>
+            <el-table-column label="id" prop="id" sortable show-overflow-tooltip></el-table-column>
             <el-table-column label="姓名" prop="name" sortable></el-table-column>
             <el-table-column label="年龄" prop="age"></el-table-column>
             <el-table-column label="财产" prop="asset"></el-table-column>
             <el-table-column label="是否已婚" prop="married"></el-table-column>
-            <el-table-column label="生日" prop="birth"></el-table-column>
+            <el-table-column label="生日" prop="birth" show-overflow-tooltip></el-table-column>
             <el-table-column label="地址" prop="addr" show-overflow-tooltip></el-table-column>
-            <el-table-column label="邮箱" prop="email"></el-table-column>
+            <el-table-column label="邮箱" prop="email" show-overflow-tooltip></el-table-column>
             <el-table-column label="操作" type="operation">
                 <el-button link type="primary" size="small">修改</el-button>
                 <el-button link type="danger" size="small">删除</el-button>
