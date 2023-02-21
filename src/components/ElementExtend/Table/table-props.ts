@@ -31,6 +31,11 @@ export const tableProps = {
         type: Boolean,
         default: false
     },
+    /** 是否回到第一页 */
+    firstPage: {
+        type: Boolean,
+        default: false
+    },
     /** 默认显示列 */
     defaultColumns: {
         type: Array as PropType<string[]>,

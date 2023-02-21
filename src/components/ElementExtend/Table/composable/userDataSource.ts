@@ -75,11 +75,17 @@ export function useDataSource(props: TableProps, context: SetupContext) {
             getTableData()
             emit('update:reload', false)
         }
+        if (props.firstPage) {
+            paginationState.currentPage = 1
+            emit('update:firstPage', false)
+        }
     })
 
     onBeforeMount(() => {
         if (props.init && props.url) {
             getTableData()
+        } else if (props.data) {
+            table.dataSource = props.data
         }
     })
 

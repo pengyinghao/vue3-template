@@ -10,7 +10,7 @@ import initMethods from './tableMethods'
 export default defineComponent({
     directives: { loading: vLoading },
     props: tableProps,
-    emits: ['load', 'update:reload'],
+    emits: ['load', 'update:reload', 'update:firstPage'],
     setup(props: TableProps, context: SetupContext) {
         const { slots, attrs, expose } = context
 
