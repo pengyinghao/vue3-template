@@ -5,6 +5,8 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
+        "serve:dev": "node ./server/index",
+        "serve": "concurrently  \"pnpm dev\" \"pnpm serve:dev\"",
         "build": "vue-tsc && vite build",
         "preview": "vite preview",
         "lint": "eslint ./src/ --ext .ts,.tsx,.vue",
@@ -43,6 +45,7 @@
         "@vitejs/plugin-vue-jsx": "^3.0.0",
         "@vue/eslint-config-typescript": "^11.0.2",
         "commitizen": "^4.2.6",
+        "concurrently": "^7.6.0",
         "cz-conventional-changelog": "^3.3.0",
         "cz-customizable": "^7.0.0",
         "eslint": "^8.31.0",

@@ -13,7 +13,7 @@ export default defineConfig(({ command, mode }) => {
         },
         server: {
             host: '0.0.0.0',
-            open: envs.VITE_OPEN_BROWSER === 'true',
+            port: 9001,
             proxy: {
                 '/api': {
                     secure: false,
@@ -28,12 +28,7 @@ export default defineConfig(({ command, mode }) => {
                 output: {
                     chunkFileNames: 'js/[name]-[hash].js',
                     entryFileNames: 'js/[name]-[hash].js',
-                    assetFileNames: '[ext]/[hash].[ext]',
-                    manualChunks(id: any) {
-                        if (id.includes('node_modules')) {
-                            return 'vendor'
-                        }
-                    }
+                    assetFileNames: '[ext]/[hash].[ext]'
                 }
             },
             // sourcemap: true,
