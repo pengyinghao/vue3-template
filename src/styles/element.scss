@@ -19,3 +19,11 @@
 .el-table {
     font-size: var(--el-font-size-base);
 }
+
+.search-form .el-input {
+    @apply !w-220px;
+}
+
+.search-form .el-input .el-input__wrapper {
+    @apply !w-full;
+}
