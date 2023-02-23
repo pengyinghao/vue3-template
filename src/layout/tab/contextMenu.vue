@@ -41,6 +41,7 @@ interface ContentMenuOptions {
 const appStore = useAppStore()
 const tabStore = useTabStore()
 const router = useRouter()
+const route = useRoute()
 const { tabs } = toRefs(tabStore)
 /** 选中tab */
 const selectTab = ref<RouteRecordRaw>()
@@ -159,7 +160,7 @@ const contextOperation: Record<Operation, () => void> = {
 /** 右键菜单单击事件 */
 const onContextClick = (operation: Operation) => {
     contextOperation[operation]()
-    if (operation !== 'refresh') {
+    if (operation !== 'refresh' && route.fullPath !== selectTab.value?.path) {
         const { path } = tabs.value[tabs.value.length - 1]
         router.push(path)
     }
