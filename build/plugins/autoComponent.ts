@@ -17,7 +17,7 @@ export function autoComponent() {
 export function autoImport() {
     return AutoImport({
         dts: 'typings/auto-imports.d.ts',
-        dirs: ['./src/store'],
+        dirs: [],
         imports: ['vue', 'vue-router']
     })
 }

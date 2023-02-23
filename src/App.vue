@@ -12,6 +12,7 @@ import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 import PreferenceSetting from '@/layout/preferenceSetting/preferenceSetting.vue'
 import { useTheme } from './hooks/theme/useTheme'
 import { useChangeTheme } from './hooks/theme/useChangeTheme'
+import { useAppStore } from '@/store'
 const appStore = useAppStore()
 useTheme()
 useChangeTheme()

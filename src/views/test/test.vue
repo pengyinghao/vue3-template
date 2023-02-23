@@ -25,6 +25,7 @@
 import { useChangeTheme } from '@/hooks/theme/useChangeTheme'
 import { useTheme } from '@/hooks/theme/useTheme'
 import { CSelect } from '@/components'
+import { useAppStore } from '@/store'
 defineOptions({ name: 'Root' })
 useTheme()
 const appStore = useAppStore()

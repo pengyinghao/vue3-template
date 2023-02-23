@@ -1,4 +1,5 @@
 /* eslint-disable no-param-reassign */
+import { useAppStore } from '@/store'
 import { PRE, PRE_DARK, PRE_LIGHT, WHITE, BLACK } from './cssConstant'
 
 const html = document.documentElement

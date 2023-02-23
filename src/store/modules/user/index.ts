@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { RouteRecordRaw } from 'vue-router'
 import { cloneDeep } from 'lodash'
-import { menuInfos } from '../../menus'
+import { menuInfos } from '../../../menus'
 import createRoute from '@/router/guard/generatorDynamicRouter'
 
 interface UserInfo {
@@ -24,7 +24,7 @@ interface userStore {
     dynamicRoute: (() => void)[]
 }
 
-export default defineStore({
+export const useUserStore = defineStore({
     id: 'user',
     state: (): userStore => ({
         info: {

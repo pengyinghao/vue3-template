@@ -29,6 +29,7 @@
 </template>
 <script lang="ts" setup>
 import { PageContainer, Icon } from '@/components'
+import { useUserStore } from '@/store'
 import Item from './item.vue'
 defineOptions({ name: 'PersonInformation' })
 const userStore = useUserStore()

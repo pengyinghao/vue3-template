@@ -21,6 +21,7 @@
 import { CSSProperties } from 'vue'
 import { RouteRecordRaw } from 'vue-router'
 import { Icon } from '@/components'
+import { useAppStore, useTabStore } from '@/store'
 defineOptions({
     name: 'ContextMenu'
 })

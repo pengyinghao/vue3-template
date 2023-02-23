@@ -1,6 +1,7 @@
 import { Router, RouteRecordRaw } from 'vue-router'
 import { LOGIN_PATH, ALLOW_LIST } from '@/core/config'
 import NProgress from '@/plugins/nprogress'
+import { useUserStore } from '@/store'
 
 /** 创建路由守卫 */
 export function createRouterGuard(router: Router) {

@@ -2,6 +2,7 @@ import { AxiosError, AxiosResponse } from 'axios'
 import { ElMessage } from 'element-plus'
 import { ERROR_STATUS, requestConfig, ResponseData, ResponseEnum } from './types'
 import router from '@/router'
+import { useUserStore } from '@/store'
 
 /**
  * 处理 axios 返回信息

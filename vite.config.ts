@@ -28,7 +28,12 @@ export default defineConfig(({ command, mode }) => {
                 output: {
                     chunkFileNames: 'js/[name]-[hash].js',
                     entryFileNames: 'js/[name]-[hash].js',
-                    assetFileNames: '[ext]/[hash].[ext]'
+                    assetFileNames: '[ext]/[hash].[ext]',
+                    manualChunks(id: any) {
+                        if (id.includes('node_modules')) {
+                            return 'vendor'
+                        }
+                    }
                 }
             },
             // sourcemap: true,

@@ -25,6 +25,7 @@
 
 <script lang="ts" setup>
 import { User, Setting, SwitchButton } from '@element-plus/icons-vue'
+import { useAppStore, useUserStore } from '@/store'
 defineOptions({
     name: 'Avatar'
 })

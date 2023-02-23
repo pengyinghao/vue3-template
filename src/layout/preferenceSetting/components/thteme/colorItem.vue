@@ -21,6 +21,7 @@
 </template>
 <script lang="ts" setup>
 import { Icon } from '@/components'
+import { useAppStore } from '@/store'
 defineProps<{
     /** 颜色值 */
     color: string

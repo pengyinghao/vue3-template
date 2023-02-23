@@ -5,6 +5,7 @@ import 'uno.css'
 import './styles/index.scss'
 import { setupRoute } from './router'
 import { setupDirective } from './core/directives'
+import { setupPinia } from './store'
 
 const app = createApp(App)
 setupPinia(app)

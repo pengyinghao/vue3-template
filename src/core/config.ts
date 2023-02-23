@@ -1,4 +1,4 @@
-import { AppStore } from '@/store/modules/appStore'
+import { AppStore } from '@/store/modules/app'
 
 /** 登录地址 */
 export const LOGIN_PATH = '/login'

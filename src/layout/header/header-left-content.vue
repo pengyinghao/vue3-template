@@ -12,6 +12,7 @@
 
 <script lang="ts" setup>
 import { Icon } from '@/components'
+import { useAppStore } from '@/store'
 import Breadcrumb from './components/breadcrumb.vue'
 defineOptions({
     name: 'HeaderLeftContent'

@@ -7,7 +7,7 @@ interface TabStore {
     tabs: RouteRecordRaw[]
 }
 
-export default defineStore({
+export const useTabStore = defineStore({
     id: 'tab',
     state: (): TabStore => {
         return {

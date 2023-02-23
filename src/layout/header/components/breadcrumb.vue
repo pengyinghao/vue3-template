@@ -13,6 +13,7 @@
 <script lang="ts" setup>
 import { RouteLocationNormalizedLoaded, RouteRecordRaw } from 'vue-router'
 import { Icon } from '@/components'
+import { useAppStore } from '@/store'
 defineOptions({ name: 'Breadcrumb' })
 const route = useRoute()
 const appStore = useAppStore()

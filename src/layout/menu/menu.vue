@@ -26,6 +26,7 @@
 import { Icon } from '@/components'
 import subMenu from './sub-menu.vue'
 import Logo from './logo.vue'
+import { useAppStore, useUserStore } from '@/store'
 
 defineOptions({
     name: 'Menu'

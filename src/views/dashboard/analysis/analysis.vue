@@ -38,6 +38,7 @@
 </template>
 <script lang="ts" setup>
 import { useDebounceFn } from '@vueuse/core'
+import { useAppStore } from '@/store'
 import { CardItem, JobStatistics, ObjectStorage, UserUseTrend } from './components'
 defineOptions({ name: 'Analysis' })
 

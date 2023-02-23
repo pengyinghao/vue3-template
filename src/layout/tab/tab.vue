@@ -31,6 +31,7 @@ import { onClickOutside } from '@vueuse/core'
 import { RouteRecordRaw } from 'vue-router'
 import { Icon } from '@/components'
 import contextMenu from './contextMenu.vue'
+import { useTabStore } from '@/store'
 
 const route = useRoute()
 const router = useRouter()

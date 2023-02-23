@@ -36,7 +36,7 @@ export interface AppStore {
     size: 'large' | 'default' | 'small'
 }
 
-export default defineStore({
+export const useAppStore = defineStore({
     id: 'app',
     state: (): AppStore => ({
         ...DEFAULT_APP_STORE

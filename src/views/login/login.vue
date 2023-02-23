@@ -50,6 +50,7 @@
 import { Hide, View } from '@element-plus/icons-vue'
 import loginBg from '@/assets/images/login-bg.png'
 import code from '@/assets/images/code.gif'
+import { useUserStore } from '@/store'
 const router = useRouter()
 interface FormData {
     /** 账号 */

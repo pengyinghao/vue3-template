@@ -1,5 +1,5 @@
 import { ComputedRef } from 'vue'
-import { useAppStore } from '@/store'
+import { useAppStore } from '@/store/modules/app'
 export interface EchartsColor {
     /** X轴Y轴分割线线条的颜色 */
     lineColor: ComputedRef<string>
