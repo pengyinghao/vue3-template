@@ -10,6 +10,7 @@
 import dayjs from 'dayjs'
 import { useEChartsColors } from '@/hooks/useEChartsColors'
 import echarts from '@/plugins/echarts'
+import { useAppStore } from '@/store'
 
 const { lineColor, legendTextColor, tipBgColor, tipBorderColor, axisPointerLineColor } =
     useEChartsColors()
@@ -163,6 +164,13 @@ const getData = () => {
 }
 getData()
 
+const appStore = useAppStore()
+watch(
+    () => appStore.themeMode,
+    () => {
+        getData()
+    }
+)
 const resize = () => {
     chart.value.resize()
 }
