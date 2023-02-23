@@ -9,8 +9,10 @@ export function useTheme() {
         if (appStore.followSystemTheme) {
             if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 theme = 'dark'
+                appStore.themeMode = 'dark'
             }
         } else {
+            appStore.themeMode = 'light'
             theme = appStore.themeMode
         }
         document.documentElement.className = theme
