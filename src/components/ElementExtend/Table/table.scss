@@ -9,5 +9,5 @@
 }
 
 .dark .el-table__header th {
-    background-color: #292e34;
+    background-color: var(--el-table-row-hover-bg-color) !important;
 }

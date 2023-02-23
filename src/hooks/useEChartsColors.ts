@@ -1,5 +1,6 @@
 import { ComputedRef } from 'vue'
 import { useAppStore } from '@/store/modules/app'
+import { isDark } from '@/utils/utils'
 export interface EchartsColor {
     /** X轴Y轴分割线线条的颜色 */
     lineColor: ComputedRef<string>
@@ -28,48 +29,54 @@ export interface EchartsColor {
 /** 全局echarts 线条颜色 */
 export function useEChartsColors(): EchartsColor {
     const appStore = useAppStore()
+    const isDak = computed(() => {
+        if (appStore.followSystemTheme) {
+            return isDark()
+        }
+        return appStore.themeMode === 'dark'
+    })
     const lineColor = computed(() => {
-        if (appStore.themeMode === 'dark') return '#32373d'
+        if (isDak.value) return '#32373d'
         return '#edeff5'
     })
     const XLabelColor = computed(() => {
-        if (appStore.themeMode === 'dark') return '#808080'
+        if (isDak.value) return '#808080'
         return '#808080'
     })
     const legendTextColor = computed(() => {
-        if (appStore.themeMode === 'dark') return '#808080'
+        if (isDak.value) return '#808080'
         return '#808080'
     })
     const legendCloseColor = computed(() => {
-        if (appStore.themeMode === 'dark') return '#666'
+        if (isDak.value) return '#666'
         return '#ccc'
     })
     const titleColor = computed(() => {
-        if (appStore.themeMode === 'dark') return '#808080'
+        if (isDak.value) return '#808080'
         return '#808080'
     })
     const legendColor = computed(() => {
-        if (appStore.themeMode === 'dark') return '#556FF6'
+        if (isDak.value) return '#556FF6'
         return '#556FF6'
     })
     const tipBgColor = computed(() => {
-        if (appStore.themeMode === 'dark') return '#141414'
+        if (isDak.value) return '#141414'
         return '#fff'
     })
     const tipBorderColor = computed(() => {
-        if (appStore.themeMode === 'dark') return '#141414'
+        if (isDak.value) return '#141414'
         return '#fff'
     })
     const tipTextColor = computed(() => {
-        if (appStore.themeMode === 'dark') return '#fff'
+        if (isDak.value) return '#fff'
         return '#808080'
     })
     const axisPointerLineColor = computed(() => {
-        if (appStore.themeMode === 'dark') return '#333'
+        if (isDak.value) return '#333'
         return '#b3b3b3'
     })
     const pieCentreTextColor = computed(() => {
-        if (appStore.themeMode === 'dark') return '#DCDCDC'
+        if (isDak.value) return '#DCDCDC'
         return '#333333'
     })
     return {

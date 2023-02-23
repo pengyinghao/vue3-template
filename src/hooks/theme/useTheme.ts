@@ -1,4 +1,5 @@
 import { useAppStore } from '@/store'
+import { isDark } from '@/utils/utils'
 
 /** 主题模式切换 */
 export function useTheme() {
@@ -7,12 +8,10 @@ export function useTheme() {
     const changeTheme = () => {
         let theme = 'light'
         if (appStore.followSystemTheme) {
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            if (isDark()) {
                 theme = 'dark'
-                appStore.themeMode = 'dark'
             }
         } else {
-            appStore.themeMode = 'light'
             theme = appStore.themeMode
         }
         document.documentElement.className = theme

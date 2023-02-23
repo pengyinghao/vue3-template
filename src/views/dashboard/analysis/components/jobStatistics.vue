@@ -166,7 +166,7 @@ getData()
 
 const appStore = useAppStore()
 watch(
-    () => appStore.themeMode,
+    () => [appStore.themeMode, appStore.followSystemTheme],
     () => {
         getData()
     }
