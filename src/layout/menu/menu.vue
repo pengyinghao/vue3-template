@@ -11,6 +11,7 @@
                 <template v-for="(routeItem, index) in userStore.elementMenus" :key="index">
                     <el-menu-item
                         v-if="routeItem.children?.length === 0 && !routeItem.meta?.hidden"
+                        class="aside-sub-menu"
                         :index="routeItem.meta?.id"
                     >
                         <Icon :name="(routeItem.meta?.icon as string)" size="20" class="mr-5px" />
@@ -54,8 +55,8 @@ const onSelect = (menuId: string) => {
 }
 </style>
 <style lang="scss">
-.dark .aside-menu {
-    .el-menu-item:hover,
+.dark {
+    .aside-sub-menu:hover,
     .el-sub-menu__title:hover {
         background-color: var(--dark1) !important;
     }

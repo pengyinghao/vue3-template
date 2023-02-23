@@ -13,6 +13,7 @@
                 <el-menu-item
                     v-if="sub.children && sub.children.length === 0"
                     :index="sub.meta?.id"
+                    class="aside-sub-menu"
                 >
                     {{ sub.meta?.title }}
                 </el-menu-item>
