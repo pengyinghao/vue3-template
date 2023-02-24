@@ -12,6 +12,23 @@
         "lint": "eslint ./src/ --ext .ts,.tsx,.vue",
         "prepare": "husky install"
     },
+    "keywords": [
+        "Vue",
+        "Vue3",
+        "admin",
+        "admin-template",
+        "vue-admin",
+        "vue-admin-template",
+        "Vite",
+        "vite-admin",
+        "TypeScript",
+        "TS",
+        "element",
+        "element-plus",
+        "element-admin",
+        "element-Admin",
+        "UnoCSS"
+    ],
     "dependencies": {
         "@element-plus/icons-vue": "^2.0.10",
         "@vueuse/components": "^9.12.0",
