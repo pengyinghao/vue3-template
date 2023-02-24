@@ -55,6 +55,10 @@ watch(
     () => throttledFn()
 )
 window.addEventListener('resize', throttledFn)
+
+onUnmounted(() => {
+    window.removeEventListener('reset', throttledFn)
+})
 </script>
 
 <style scoped>
