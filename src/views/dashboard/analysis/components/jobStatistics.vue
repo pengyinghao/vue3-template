@@ -151,14 +151,17 @@ const getOptions = () => {
     }
 }
 
-const refChart = ref()
-const chart = computed(() => echarts.init(refChart.value))
+const refChart = ref<HTMLDivElement>()
+const chart = computed(() => {
+    if (refChart.value) return echarts.init(refChart.value)
+    return null
+})
 /** 获取统计数据信息 */
 const getData = () => {
     setTimeout(() => {
         nextTick(() => {
             const options = getOptions()
-            chart.value.setOption(options)
+            chart.value?.setOption(options)
         })
     }, Math.random() * 1000)
 }
@@ -172,7 +175,7 @@ watch(
     }
 )
 const resize = () => {
-    chart.value.resize()
+    chart.value?.resize()
 }
 
 defineExpose({

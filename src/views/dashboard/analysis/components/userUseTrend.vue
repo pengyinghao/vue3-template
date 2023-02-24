@@ -121,10 +121,15 @@ const getOption = () => {
     return option
 }
 
-const refChart = ref()
-const chart = computed(() => echarts.init(refChart.value))
+const refChart = ref<HTMLDivElement>()
+const chart = computed(() => {
+    if (refChart.value) {
+        return echarts.init(refChart.value)
+    }
+    return null
+})
 const resize = () => {
-    chart.value.resize()
+    chart.value?.resize()
 }
 
 /** 获取统计数据信息 */
@@ -132,7 +137,7 @@ const getData = () => {
     setTimeout(() => {
         nextTick(() => {
             const options = getOption()
-            chart.value.setOption(options)
+            chart.value?.setOption(options)
         })
     }, Math.random() * 1000)
 }
