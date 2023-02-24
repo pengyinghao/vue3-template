@@ -22,6 +22,9 @@ export default defineConfig(({ command, mode }) => {
                 }
             }
         },
+        css: {
+            devSourcemap: true
+        },
         build: {
             outDir: 'dist',
             rollupOptions: {

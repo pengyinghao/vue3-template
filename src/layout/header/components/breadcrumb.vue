@@ -1,5 +1,5 @@
 <template>
-    <el-breadcrumb v-show="appStore.showBreadcrumb" separator="/">
+    <el-breadcrumb separator="/">
         <template v-for="(item, index) in routes" :key="index">
             <el-breadcrumb-item v-if="item.meta?.title" :to="{ path: item.path }">
                 <div class="h-16px flex items-center">
@@ -13,10 +13,9 @@
 <script lang="ts" setup>
 import { RouteLocationNormalizedLoaded, RouteRecordRaw } from 'vue-router'
 import { Icon } from '@/components'
-import { useAppStore } from '@/store'
+
 defineOptions({ name: 'Breadcrumb' })
 const route = useRoute()
-const appStore = useAppStore()
 
 const routes = ref<RouteRecordRaw[]>([])
 /** 设置面包屑数据 */

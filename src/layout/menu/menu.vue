@@ -28,6 +28,7 @@ import { Icon } from '@/components'
 import subMenu from './sub-menu.vue'
 import Logo from './logo.vue'
 import { useAppStore, useUserStore } from '@/store'
+import { useLayout } from '@/composables/useLayout'
 
 defineOptions({
     name: 'Menu'
@@ -36,6 +37,13 @@ const route = useRoute()
 const router = useRouter()
 const appStore = useAppStore()
 const userStore = useUserStore()
+const { isMobile } = useLayout()
+
+watchEffect(() => {
+    if (isMobile.value) {
+        appStore.menuIsCollapse = true
+    }
+})
 
 const onSelect = (menuId: string) => {
     const menu = userStore.originMenus.find((item) => `${item.id}` === menuId)
