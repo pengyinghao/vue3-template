@@ -13,7 +13,6 @@ dist-ssr
 *.local
 
 typings/auto-components.d.ts
-typings/auto-imports.d.ts
 
 # Editor directories and files
 .idea
