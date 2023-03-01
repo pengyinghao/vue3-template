@@ -13,12 +13,12 @@ export const tableProps = {
     },
     /** 默认数据源 */
     data: {
-        type: Array,
+        type: Array as PropType<any[]>,
         default: () => []
     },
     /** 请求参数 */
     params: {
-        type: Object,
+        type: Object as PropType<Record<string, any>>,
         default: () => ({})
     },
     /** 是否立即请求 */
