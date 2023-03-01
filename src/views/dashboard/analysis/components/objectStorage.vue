@@ -27,5 +27,5 @@
     </el-card>
 </template>
 <script lang="ts" setup>
-import ObjectStorageItem from './ObjectStorageItem.vue'
+import ObjectStorageItem from './objectStorageItem.vue'
 </script>

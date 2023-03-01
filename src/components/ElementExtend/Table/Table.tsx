@@ -1,6 +1,6 @@
 import { SetupContext } from 'vue'
 import { ElTable, ElPagination, vLoading } from 'element-plus'
-import { TableProps, tableProps } from './table-props'
+import { tableProps } from './table-props'
 
 import './table.scss'
 import { useDataSource } from './composable/userDataSource'
@@ -11,7 +11,7 @@ export default defineComponent({
     directives: { loading: vLoading },
     props: tableProps,
     emits: ['load', 'update:reload', 'update:firstPage'],
-    setup(props: TableProps, context: SetupContext) {
+    setup(props, context: SetupContext) {
         const { slots, attrs, expose } = context
 
         const tableHeader = slots['table-header']
