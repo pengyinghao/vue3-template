@@ -24,8 +24,8 @@ jobs:
       # Build 
       - name: Build
         run: |
-          pnpm install --frozen-lockfile
-          pnpm build
+          npm install --frozen-lockfile
+          npm build
 
       # Push it to gh-pahes
       - name: Deploy
