@@ -17,14 +17,14 @@ jobs:
 
       # Setup Node.js
       - name: Setup Node
-        uses: actions/setup-node@v2.1.2
+        uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: ${{ matrix.node }}
 
-      # Build 
+      # Build
       - name: Build
         run: |
-          npm install --frozen-lockfile
+          npm install
           npm build
 
       # Push it to gh-pahes
