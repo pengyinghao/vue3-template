@@ -36,7 +36,6 @@ specifiers:
   lodash: ^4.17.21
   nprogress: ^0.2.0
   pinia: ^2.0.28
-  pinia-plugin-persist: ^1.0.0
   pinia-plugin-persistedstate: ^3.0.2
   postcss-html: ^1.5.0
   prettier: ^2.8.2
@@ -72,7 +71,6 @@ dependencies:
   lodash: 4.17.21
   nprogress: 0.2.0
   pinia: 2.0.28_prq2uz4lho2pwp6irk4cfkrxwu
-  pinia-plugin-persist: 1.0.0_pinia@2.0.28+vue@3.2.45
   pinia-plugin-persistedstate: 3.0.2_pinia@2.0.28
   qs: 6.11.0
   vue: 3.2.45
@@ -4449,21 +4447,6 @@ packages:
     hasBin: true
     dev: true
 
-  /pinia-plugin-persist/1.0.0_pinia@2.0.28+vue@3.2.45:
-    resolution: {integrity: sha512-M4hBBd8fz/GgNmUPaaUsC29y1M09lqbXrMAHcusVoU8xlQi1TqgkWnnhvMikZwr7Le/hVyMx8KUcumGGrR6GVw==}
-    peerDependencies:
-      '@vue/composition-api': ^1.0.0
-      pinia: ^2.0.0
-      vue: ^2.0.0 || >=3.0.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-    dependencies:
-      pinia: 2.0.28_prq2uz4lho2pwp6irk4cfkrxwu
-      vue: 3.2.45
-      vue-demi: 0.12.5_vue@3.2.45
-    dev: false
-
   /pinia-plugin-persistedstate/3.0.2_pinia@2.0.28:
     resolution: {integrity: sha512-84vPyUhPA/8Pr+1mT1ioNb2d8z4tvdgYRqMQf8xyauOVBKjo0ZcRBwPQBV7ZAJG43Kwar43nXG2jU+ZMvAFFRQ==}
     peerDependencies:
@@ -5683,21 +5666,6 @@ packages:
       vue: ^3.0.0
     dependencies:
       countup.js: 2.4.2
-      vue: 3.2.45
-    dev: false
-
-  /vue-demi/0.12.5_vue@3.2.45:
-    resolution: {integrity: sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==}
-    engines: {node: '>=12'}
-    hasBin: true
-    requiresBuild: true
-    peerDependencies:
-      '@vue/composition-api': ^1.0.0-rc.1
-      vue: ^3.0.0-0 || ^2.6.0
-    peerDependenciesMeta:
-      '@vue/composition-api':
-        optional: true
-    dependencies:
       vue: 3.2.45
     dev: false
 

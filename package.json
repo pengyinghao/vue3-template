@@ -40,7 +40,6 @@
         "lodash": "^4.17.21",
         "nprogress": "^0.2.0",
         "pinia": "^2.0.28",
-        "pinia-plugin-persist": "^1.0.0",
         "pinia-plugin-persistedstate": "^3.0.2",
         "qs": "^6.11.0",
         "vue": "^3.2.45",
