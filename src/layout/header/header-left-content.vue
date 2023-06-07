@@ -16,9 +16,7 @@ import { useLayout } from '@/composables/useLayout'
 import { useAppStore } from '@/store'
 import Breadcrumb from './components/breadcrumb.vue'
 const { isMobile } = useLayout()
-defineOptions({
-    name: 'HeaderLeftContent'
-})
+defineOptions({ name: 'HeaderLeftContent' })
 
 const appStore = useAppStore()
 const onMenuCollapse = () => {

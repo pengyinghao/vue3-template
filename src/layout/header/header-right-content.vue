@@ -13,9 +13,7 @@ import { useFullscreen } from '@vueuse/core'
 import Avatar from './components/avatar.vue'
 import Message from './components/message.vue'
 import { Icon } from '@/components'
-defineOptions({
-    name: 'HeaderRightContent'
-})
+defineOptions({ name: 'HeaderRightContent' })
 
 const { toggle } = useFullscreen()
 

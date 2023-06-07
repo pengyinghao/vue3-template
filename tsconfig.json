@@ -16,8 +16,7 @@
         "baseUrl": ".",
         "paths": {
             "@/*": ["src/*"]
-        },
-        "types": ["unplugin-vue-define-options/macros-global"]
+        }
     },
 
     "include": ["src", "typings/*.d.ts", "typings/**/*.d.ts"],

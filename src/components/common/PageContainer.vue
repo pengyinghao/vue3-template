@@ -23,16 +23,13 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { Icon } from '@/components'
-interface Props {
-    /** 是否显示header */
-    header?: boolean
-    /** 内容区域是否有padding */
-    contentPadding?: boolean
-    /** 是否显示返回按钮 */
-    goBack?: boolean
-}
-withDefaults(defineProps<Props>(), { contentPadding: true, header: false, goBack: false })
+import Icon from '@/components/Icon/Icon.vue'
+import { PageContainerProps } from './comm-type'
+withDefaults(defineProps<PageContainerProps>(), {
+    contentPadding: true,
+    header: false,
+    goBack: false
+})
 const slots = useSlots()
 const emits = defineEmits(['go-back'])
 

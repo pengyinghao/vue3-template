@@ -13,21 +13,10 @@
 </template>
 <script lang="ts" setup>
 import { Icon as Iconify } from '@iconify/vue'
-defineOptions({
-    name: 'Icon'
+import { IconProps } from './icon-type'
+defineOptions({ name: 'Icon' })
+withDefaults(defineProps<IconProps>(), {
+    size: 16,
+    color: undefined
 })
-withDefaults(
-    defineProps<{
-        /** 图标名称 */
-        name: string
-        /** 图标大小 */
-        size?: number | string
-        /** 图标颜色 */
-        color?: string
-    }>(),
-    {
-        size: 16,
-        color: undefined
-    }
-)
 </script>

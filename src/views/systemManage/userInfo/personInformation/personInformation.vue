@@ -28,7 +28,8 @@
     </PageContainer>
 </template>
 <script lang="ts" setup>
-import { PageContainer, Icon } from '@/components'
+import Icon from '@/components/Icon/Icon.vue'
+import PageContainer from '@/components/common/PageContainer.vue'
 import { useUserStore } from '@/store'
 import Item from './item.vue'
 defineOptions({ name: 'PersonInformation' })
